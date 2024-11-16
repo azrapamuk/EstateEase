@@ -10,11 +10,16 @@ ul {
     margin: 0;
     padding: 0;
     background-color: #333;
-    overflow: hidden;
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center; 
 }
 
 li {
-    float: left;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 li a {
@@ -24,35 +29,29 @@ li a {
     justify-content: center;
     color: white;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;
-    height: 70px;
-    transition: all 1s ease;
+    height: 100%;
+    padding: 10px 15px;
 }
 
 li a span {
-    display: block;
     font-size: 16px;
-    margin-top: 5px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.5s ease;
 }
 
 li a i {
-    display: block;
-    font-size: 16px;
-    margin-top: 5px;
-    transition: font-size 0.3s ease;
+    font-size: 20px;
+    transition: font-size 1s ease, transform 1s ease;
 }
 
 li a:hover span {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px);
 }
 
 li a:hover i {
-    font-size: 30px;
-    color: #ff9900;
+    font-size: 36px;
+    transform: translateY(-10px);
 }
 
 li a:hover {
