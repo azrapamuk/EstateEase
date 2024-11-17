@@ -1,0 +1,214 @@
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 0;
+}
+
+iframe {
+    border: none; 
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+.glavnaVijest {
+    grid-column: 1 / -1; 
+    grid-row: 1 / 3;
+    background-color: #fdf1d3;
+    text-align: center;
+    aspect-ratio: 2 / 1;
+    border: 1px solid #a46f68;
+}
+
+.glavnaVijest h1{
+    font-size: 7vh;
+    font-weight: bold;
+}
+
+.glavnaVijest p{
+    font-size: 3vh;
+    
+}
+
+.glavnaVijest img {
+    width: 100%;
+    height: auto;
+}
+
+.visokaVijest {
+    box-sizing: border-box;
+    padding: 10%;
+    aspect-ratio: 1/2;
+    background-color: #8bbeca;
+    color: white;
+    border: 1px solid #6db5c6;
+}
+
+.visokaVijest h2{
+    font-size: 2.5vw;
+}
+
+.visokaVijest p{
+    font-size: 1vw;
+}
+
+.kvadratnaVijest {
+    box-sizing: border-box;
+    padding: 5%;
+    aspect-ratio: 1/1;
+    background-color: #a89bbd;
+    color: white;
+    border: 2px solid #614390;
+}
+
+.kvadratnaVijest h2{
+    font-size: 2vw;
+}
+
+.kvadratnaVijest p{
+    font-size: 1vw;
+}
+.visokaVijest:nth-of-type(2){
+    grid-column: 1 / 2;
+    grid-row:  3/5;  
+}
+
+.visokaVijest:nth-of-type(7){
+    grid-column: 4 / -1;
+    grid-row:  3/5;  
+}
+
+.kvadratnaVijest:nth-of-type(3){
+    grid-column: 2 / 3; 
+    grid-row: 3 / 4;
+}
+
+.kvadratnaVijest:nth-of-type(4){
+    grid-column: 3 / 4; 
+    grid-row: 3 / 4;
+}
+
+.kvadratnaVijest:nth-of-type(5){
+    grid-column: 2 / 3; 
+    grid-row: 4 / 5;
+}
+
+.kvadratnaVijest:nth-of-type(6){
+    grid-column: 3 / 4; 
+    grid-row: 4 / 5;
+}
+
+.kvadratnaVijest:nth-of-type(8){
+    grid-column: 1 / 2; 
+    grid-row: 5 / 6;
+}
+
+.kvadratnaVijest:nth-of-type(9){
+    grid-column: 2 / 3; 
+    grid-row: 5 / 6;
+}
+
+.kvadratnaVijest:nth-of-type(10){
+    grid-column: 1 / 2; 
+    grid-row: 6 / 7;
+}
+
+.kvadratnaVijest:nth-of-type(11){
+    grid-column: 2 / 3; 
+    grid-row: 6 / 7;
+}
+
+.visokaVijest:nth-of-type(12){
+    grid-column: 3 / 4;
+    grid-row:  5 / 7;  
+}
+
+.visokaVijest:nth-of-type(13){
+    grid-column: 4 / -1;
+    grid-row:  5 / 7;  
+}
+
+@media (max-width: 800px) {
+
+    .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    
+    
+    .glavnaVijest {
+        grid-column: 1 / -1; 
+        grid-row: 1 / 3;
+        font-weight: body;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .visokaVijest:nth-of-type(2){
+        grid-column: 1 / 2;
+        grid-row:  3 / 5;  
+    }
+    
+    .visokaVijest:nth-of-type(7){
+        grid-column: 2 / -1;
+        grid-row:  5 / 7;  
+    }
+    
+    .kvadratnaVijest:nth-of-type(3){
+        grid-column: 2 / -1; 
+        grid-row: 3 / 4;
+    }
+    
+    .kvadratnaVijest:nth-of-type(4){
+        grid-column: 1 / 2; 
+        grid-row: 5 / 6;
+    }
+    
+    .kvadratnaVijest:nth-of-type(5){
+        grid-column: 2 / -1; 
+        grid-row: 4 / 5;
+    }
+    
+    .kvadratnaVijest:nth-of-type(6){
+        grid-column: 1 / 2; 
+        grid-row: 6 / 7;
+    }
+    
+    .kvadratnaVijest:nth-of-type(8){
+        grid-column: 1 / 2; 
+        grid-row: 7 / 8;
+    }
+    
+    .kvadratnaVijest:nth-of-type(9){
+        grid-column: 2 / -1; 
+        grid-row: 7 / 8;
+    }
+    
+    .kvadratnaVijest:nth-of-type(10){
+        grid-column: 1 / 2; 
+        grid-row: 8 / 9;
+    }
+    
+    .kvadratnaVijest:nth-of-type(11){
+        grid-column: 2 / -1; 
+        grid-row: 8 / 9;
+    }
+    
+    .visokaVijest:nth-of-type(12){
+        grid-column: 1 / 2; 
+        grid-row:  9 / 11;  
+    }
+    
+    .visokaVijest:nth-of-type(13){
+        grid-column: 2 / -1;
+        grid-row:  9 / 11;  
+    }
+    
+    
+}

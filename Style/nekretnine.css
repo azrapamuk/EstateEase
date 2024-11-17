@@ -12,18 +12,21 @@ iframe {
 }
 
 .tip-nekretnine {
+    display: flex;
     text-align: center;
     font-weight: bold;
     font-size: 24px;
     margin: 20px 0;
+    flex-direction: column;
+    align-items: center;
 }
 
 .grid-lista-nekretnina {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;   
     gap: 20px;         
     padding: 20px;     
-    justify-content: center;  
+    justify-content: flex-start;  
 }
 
 .nekretnina {
@@ -78,3 +81,4 @@ iframe {
     border-radius: 5px;
     cursor: pointer;
 }
+
