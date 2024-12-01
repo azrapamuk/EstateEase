@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistika</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../Style/statistika.css">
+    <script type="text/javascript"  src="../Script/SpisakNekretnina.js"></script>
+    <script type="text/javascript"  src="../Script/StatistikaNekretnina.js"></script>
+    <script type="text/javascript"  src="../Script/statistika.js"></script>
+</head>
+<body>
+
+    <iframe src="meni.html"></iframe>
+
+
+
+    
+    <div class="kriteriji-container">
+        <form id="filter-form">
+            <h2>Odaberite kriterije</h2>
+            <label>
+            Tip nekretnine:
+            <input type="text" name="tip_nekretnine" placeholder="Stan, Kuća, itd.">
+            </label>
+            <br>
+            <label>
+            Lokacija:
+            <input type="text" name="lokacija" placeholder="Centar, Novo Sarajevo, itd.">
+            </label>
+            <br>
+            <label>
+                Kvadratura:
+                <input type="number" name="min_kvadratura" placeholder="Od">
+                <input type="number" name="max_kvadratura" placeholder="Do">
+            </label>
+            <br>
+            <label>
+            Cijena:
+            <input type="number" name="min_cijena" placeholder="Od">
+            <input type="number" name="max_cijena" placeholder="Do">
+            </label>
+            <br>
+            <label>
+            Godina izgradnje:
+            <input type="number" name="min_godina_izgradnje" placeholder="Od">
+            <input type="number" name="max_godina_izgradnje" placeholder="Do">
+            </label>
+            <br>
+            <label>
+            Datum objave:
+            <input type="date" name="min_datum_objave">
+            <input type="date" name="max_datum_objave">
+            </label>
+            <br>
+            <button type="button" id="filter-button" onclick="kvadraturaOutlier()">Izračunaj</button>
+            <button type="button" id="filter-button" onclick="resetFilter()">Poništi kriterije</button>
+        </form>
+        <div id="rezultati"></div>
+    </div>
+
+    <div class="moje-nekretnine">
+        <h2>Pretraga nekretnina na kojima je korisnik ostavio upit</h2>
+        
+       <!--Trenutno sam implementirala da se unosi ID korisnika u svrhu prikaza rada funkcije,budući da još uvijek ne postoji mogućnost korisničkog računa
+       Kada bude implementirana ta funkcionalnost, biti će izmijene tako da se uzima trenutno ulogovani korisnik, a ako nije ulogovan ova 
+       funkcionalnost uopšte neće biti prikazana "gostu"--> 
+        <input type="number" id="korisnik-id" name="korisnik-id" placeholder="ID korisnika" required>
+    
+        <button onclick="ucitajMojeNekretnine()">Pretraži</button>
+    
+        <div id="nekretnine-container"></div>
+    </div>
+
+    <div class="histogram-container">
+        <div class="input-section">
+            <h2>Unesite godine</h2>
+            <div id="periodi">
+                <div class="period">
+                    <label><input type="number" class="period-od" placeholder="Od"/></label>
+                    <label><input type="number" class="period-do" placeholder="Do"/></label>
+                </div>
+            </div>
+            <button onclick="dodajPeriod()">Dodaj period</button>
+        </div>
+
+
+        <div class="input-section">
+            <h2>Unesite raspone cijena</h2>
+            <div id="rasponi">
+                <div class="raspon">
+                    <label><input type="number" class="raspon-od" placeholder="Od"/></label>
+                    <label><input type="number" class="raspon-do" placeholder="Do"/></label>
+                </div>
+            </div>
+            <button onclick="dodajRaspon()">Dodaj raspon</button>
+        </div>
+
+        <div class="input-section">
+            <button onclick="iscrtajHistogram()">Iscrtaj histogram</button>
+        </div>
+
+        <div id="histogrami">
+            <h2>Histogrami</h2>
+        </div>
+    </div>
+</body>
+</html>

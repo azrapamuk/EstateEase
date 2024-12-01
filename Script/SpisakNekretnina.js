@@ -17,6 +17,11 @@ let SpisakNekretnina = function () {
                 return false;
             }
 
+            // Filtriranje po lokaciji
+            if (kriterij.lokacija && nekretnina.lokacija !== kriterij.lokacija) {
+                return false;
+            }
+
             // Filtriranje po minimalnoj kvadraturi
             if (kriterij.min_kvadratura && nekretnina.kvadratura < kriterij.min_kvadratura) {
                 return false;
@@ -34,6 +39,26 @@ let SpisakNekretnina = function () {
 
             // Filtriranje po maksimalnoj cijeni
             if (kriterij.max_cijena && nekretnina.cijena > kriterij.max_cijena) {
+                return false;
+            }
+
+            // Filtriranje minimalnoj godini izgradnje
+            if (kriterij.min_godina_izgradnje && nekretnina.godina_izgradnje < kriterij.min_godina_izgradnje) {
+                return false;
+            }
+
+            // Filtriranje po maksimalnoj godini izgradnje
+            if (kriterij.max_godina_izgradnje && nekretnina.godina_izgradnje > kriterij.max_godina_izgradnje) {
+                return false;
+            }
+
+            // Filtriranje minimalnim datumom objave
+            if (kriterij.min_datum_objave && new Date(nekretnina.datum_objave) < new Date(kriterij.min_datum_objave)) {
+                return false;
+            }
+
+            // Filtriranje po maksimalnom datumu objave
+            if (kriterij.max_datum_objave && new Date(nekretnina.datum_objave) > new Date(kriterij.max_datum_objave)) {
                 return false;
             }
 
