@@ -172,6 +172,8 @@ function ucitajSljedeceUpite() {
         ucitavanjeUpitaUTijeku = false; 
         if (error || !sljedeciUpiti || !Array.isArray(sljedeciUpiti) || sljedeciUpiti.length === 0) {
             imaJosUpitaZaUcitati = false; 
+            trenutniIndeksUpita = 0;
+            azurirajCarouselPrikaz();
             return; 
         }
 
