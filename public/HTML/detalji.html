@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bs-BA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalji</title>
+    <link rel="stylesheet" type="text/css" href="../Style/detalji.css">
+
+    <script type="text/javascript" src="../Script/PoziviAjax.js"></script> 
+    <script type="text/javascript" src="../Script/detalji.js"></script>
+</head>
+
+<body>
+    <iframe src="meni.html"></iframe>
+
+    <div id="osnovno">
+        <img src="../Resources/stan/stan1.jpg" alt="Nekretnina" id="nekretnina-slika">
+        <p><strong>Naziv:</strong> <span id="nekretnina-naziv"></span></p>
+        <p><strong>Kvadratura:</strong> <span id="nekretnina-kvadratura"></span> m²</p>
+        <p><strong>Cijena:</strong> <span id="nekretnina-cijena"></span> BAM</p>
+    </div>
+
+    <h3>DETALJI</h3>
+    <div id="detalji">
+        <div id="kolona1">
+            <p><strong>Tip grijanja:</strong> <span id="nekretnina-tip-grijanja"></span></p>
+            <p><strong>Lokacija:</strong> <a href="#" id="nekretnina-lokacija-link"><span id="nekretnina-lokacija"></span></a></p>
+        </div>
+        <div id="kolona2">
+            <p><strong>Godina izgradnje:</strong> <span id="nekretnina-godina-izgradnje"></span></p>
+            <p><strong>Datum objave oglasa:</strong> <span id="nekretnina-datum-objave"></span></p>
+        </div>
+        <div id="opis">
+            <p><strong>Opis:</strong> <span id="nekretnina-opis"></span></p>
+        </div>
+    </div>
+
+    <h3>UPITI</h3>
+    <div id="upiti">
+        <div id="carousel-upiti-container">
+            <div class="carousel-upit-slot" id="carousel-upit-slot-1"></div>
+            <div class="carousel-upit-slot" id="carousel-upit-slot-2"></div>
+            <div class="carousel-upit-slot" id="carousel-upit-slot-3"></div>
+        </div>
+
+        <div class="carousel-controls">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </div>
+
+
+    <div id="top5-nekretnine-lokacija">
+        <h3>TOP 5 NEKRETNINA NA LOKACIJI</h3>
+        <!-- Top 5 nekretnina će se prikazivati ovdje -->
+    </div>
+
+</body>
+
+</html>

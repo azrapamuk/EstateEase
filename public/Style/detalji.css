@@ -1,0 +1,196 @@
+body {
+  background-color: #fdf1d3;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body h3 {
+  margin-left: 20px;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 80px;
+}
+
+#osnovno {
+  text-align: left;
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 20px;
+}
+
+#osnovno img {
+  max-width: 100%;
+  height: auto;
+}
+
+#detalji {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 20px;
+}
+
+#kolona1 {
+  order: 1;
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+#kolona2 {
+  order: 2;
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+#opis {
+  order: 3;
+  flex: 0 1 100%;
+  align-self: auto;
+}
+/* ... (previous CSS remains the same) ... */
+
+#upiti {
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Keep column direction */
+    gap: 10px; /* Reduced gap */
+    align-items: center;
+}
+
+#carousel-upiti-container {
+    width: 100%; /* Take full width of #upiti */
+    display: flex;
+    flex-direction: column; /* Stack slots vertically */
+    gap: 10px; /* Spacing between upit slots */
+    margin-bottom: 10px; /* Space below the container */
+}
+
+.carousel-upit-slot {
+    background-color: white;
+    border: 1px solid #000;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%; /* Each slot takes full width of container */
+}
+
+
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.carousel-controls button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Remove any CSS that was hiding/showing .upit elements or relying on .upit class for carousel display */
+.upit {
+    display: none; /* Ensure .upit divs are hidden (they are just containers now) */
+}
+
+#top5-nekretnine-lokacija {
+  margin-top: 20px; /* Added top margin for spacing from above section */
+}
+
+#top5-nekretnine-lokacija h3 {
+  font-size: 1.5em; /* Increased heading size */
+  margin-bottom: 15px; /* Spacing below the heading */
+}
+
+#top5-nekretnine-lokacija ul {
+  list-style: none; /* Ukloni bullete */
+  padding: 0;
+  margin: 0;
+}
+
+#top5-nekretnine-lokacija li {
+  margin-bottom: 25px; /* Increased margin between list items for more vertical space */
+}
+
+/* Style for the item container (no link anymore, but keeping class for styling) */
+.top5-nekretnina-item {
+  display: flex; /* Flexbox layout za sliku i info */
+  border: 1px solid #ddd; /* Okvir oko svakog itema */
+  border-radius: 8px; /* Slightly more rounded corners */
+  padding: 15px; /* Increased padding inside each item */
+  align-items: center; /* Vertikalno centriraj sliku i info */
+  background-color: #f9f9f9; /* Slightly lighter background for better contrast */
+}
+
+.top5-nekretnina-slika {
+  width: 120px; /* Increased image width */
+  height: auto; /* Automatska visina, čuva aspect ratio */
+  margin-right: 20px; /* Increased spacing between image and text */
+  border-radius: 8px; /* Match border radius of item */
+}
+
+.top5-nekretnina-info {
+  flex-grow: 1; /* Info zauzima preostali prostor */
+}
+
+.top5-nekretnina-naziv {
+  margin-top: 0;
+  margin-bottom: 8px; /* Increased spacing below title */
+  font-size: 1.3em; /* Increased title font size */
+  font-weight: bold; /* Made title bold for emphasis */
+}
+
+.top5-nekretnina-lokacija,
+.top5-nekretnina-cijena {
+  margin: 0;
+  font-size: 1.1em; /* Increased location and price font size */
+  color: #555; /* Slightly darker gray for location and price */
+}
+
+.top5-nekretnina-cijena {
+  font-weight: bold; /* Make price bold to stand out */
+  color: #333; /* Darker color for price */
+}
+
+/* Style for links within top 5 section - REMOVE UNDERLINE AND VISITED STYLE */
+#top5-nekretnine-lokacija a {
+  text-decoration: none; /* Remove underlines from links */
+  color: inherit; /* Inherit color from parent, so links don't look different initially */
+}
+
+/* Remove visited link styling */
+#top5-nekretnine-lokacija a:visited {
+  color: inherit; /* Keep the same color even after visited */
+}
+
+/* Style for the Lokacija link */
+#nekretnina-lokacija-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color from parent, initially same as other text */
+}
+
+#nekretnina-lokacija-link:visited {
+    color: inherit;
+}
+
+#nekretnina-slika {
+  width: 95%;
+  height: auto; 
+} 
+
+#top5-nekretnine-lokacija {
+  display: none; 
+}
