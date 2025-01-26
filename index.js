@@ -32,13 +32,20 @@ async function serveHTMLFile(req, res, fileName) {
     }
 }
 
+function zahtjevajPrijavu(req, res, next) {
+    if (!req.session.username) {
+        return res.status(401).json({ greska: 'Neautorizovan pristup' });
+    }
+    next();
+}
+
 // Array of HTML files and their routes
 const routes = [
     { route: '/nekretnine.html', file: 'nekretnine.html' },
     { route: '/detalji.html', file: 'detalji.html' },
     { route: '/meni.html', file: 'meni.html' },
     { route: '/prijava.html', file: 'prijava.html' },
-    { route: '/profil.html', file: 'profil.html' },
+    { route: '/profil.html', file: 'profil.html', authRequired: true },
     {route:  '/mojiUpiti.html', file: 'mojiUpiti.html'},
     {route:  '/statistika.html', file: 'statistika.html'},
     {route:  '/vijesti.html', file: 'vijesti.html'}
@@ -46,11 +53,12 @@ const routes = [
 ];
 
 // Loop through the array so HTML can be served
-routes.forEach(({ route, file }) => {
-    app.get(route, async (req, res) => {
+routes.forEach(({ route, file, authRequired }) => {
+    app.get(route, authRequired ? zahtjevajPrijavu : (req, res, next) => next(), async (req, res) => {
         await serveHTMLFile(req, res, file);
     });
 });
+
 
 /* ----------- SERVING OTHER ROUTES --------------- */
 
