@@ -3,23 +3,31 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body h3 {
   margin-left: 20px;
+  width: 90%;
+  text-align: left;
 }
 
 iframe {
   border: none;
   width: 100%;
-  height: 80px;
+  height: auto;
+  margin: 0 auto;
 }
+
 
 #osnovno {
   text-align: left;
   border: 1px solid #000;
   padding: 20px;
   margin: 20px;
+  width: 90%;
 }
 
 #osnovno img {
@@ -37,6 +45,7 @@ iframe {
   border: 1px solid #000;
   padding: 20px;
   margin: 20px;
+  width: 90%;
 }
 
 #kolona1 {
@@ -56,130 +65,120 @@ iframe {
   flex: 0 1 100%;
   align-self: auto;
 }
-/* ... (previous CSS remains the same) ... */
 
-#upiti {
+#upiti, #ponude, #zahtjevi {
     border: 1px solid #000;
     padding: 20px;
     margin: 20px;
     display: flex;
-    flex-direction: column; /* Keep column direction */
-    gap: 10px; /* Reduced gap */
-    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
 }
 
-#carousel-upiti-container {
-    width: 100%; /* Take full width of #upiti */
+#carousel-upiti-container, #carousel-ponude-container, #carousel-zahtjevi-container {
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Stack slots vertically */
-    gap: 10px; /* Spacing between upit slots */
-    margin-bottom: 10px; /* Space below the container */
+    flex-direction: column;
+    gap: 10px;
 }
 
-.carousel-upit-slot {
+.carousel-upit-slot, .carousel-ponuda-slot, .carousel-zahtjev-slot {
     background-color: white;
     border: 1px solid #000;
     padding: 10px;
     box-sizing: border-box;
-    width: 100%; /* Each slot takes full width of container */
+    width: 100%;
 }
 
-
-
 .carousel-controls {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .carousel-controls button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-/* Remove any CSS that was hiding/showing .upit elements or relying on .upit class for carousel display */
-.upit {
-    display: none; /* Ensure .upit divs are hidden (they are just containers now) */
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 #top5-nekretnine-lokacija {
-  margin-top: 20px; /* Added top margin for spacing from above section */
+  margin-top: 20px;
+  width: 90%;
+  margin-left: 20px;
+  text-align: left;
 }
 
 #top5-nekretnine-lokacija h3 {
-  font-size: 1.5em; /* Increased heading size */
-  margin-bottom: 15px; /* Spacing below the heading */
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
 #top5-nekretnine-lokacija ul {
-  list-style: none; /* Ukloni bullete */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 #top5-nekretnine-lokacija li {
-  margin-bottom: 25px; /* Increased margin between list items for more vertical space */
+  margin-bottom: 25px;
 }
 
-/* Style for the item container (no link anymore, but keeping class for styling) */
 .top5-nekretnina-item {
-  display: flex; /* Flexbox layout za sliku i info */
-  border: 1px solid #ddd; /* Okvir oko svakog itema */
-  border-radius: 8px; /* Slightly more rounded corners */
-  padding: 15px; /* Increased padding inside each item */
-  align-items: center; /* Vertikalno centriraj sliku i info */
-  background-color: #f9f9f9; /* Slightly lighter background for better contrast */
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  align-items: center;
+  background-color: #f9f9f9;
 }
 
 .top5-nekretnina-slika {
-  width: 120px; /* Increased image width */
-  height: auto; /* Automatska visina, čuva aspect ratio */
-  margin-right: 20px; /* Increased spacing between image and text */
-  border-radius: 8px; /* Match border radius of item */
+  width: 120px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
 }
 
 .top5-nekretnina-info {
-  flex-grow: 1; /* Info zauzima preostali prostor */
+  flex-grow: 1;
 }
 
 .top5-nekretnina-naziv {
   margin-top: 0;
-  margin-bottom: 8px; /* Increased spacing below title */
-  font-size: 1.3em; /* Increased title font size */
-  font-weight: bold; /* Made title bold for emphasis */
+  margin-bottom: 8px;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .top5-nekretnina-lokacija,
 .top5-nekretnina-cijena {
   margin: 0;
-  font-size: 1.1em; /* Increased location and price font size */
-  color: #555; /* Slightly darker gray for location and price */
+  font-size: 1.1em;
+  color: #555;
 }
 
 .top5-nekretnina-cijena {
-  font-weight: bold; /* Make price bold to stand out */
-  color: #333; /* Darker color for price */
+  font-weight: bold;
+  color: #333;
 }
 
-/* Style for links within top 5 section - REMOVE UNDERLINE AND VISITED STYLE */
 #top5-nekretnine-lokacija a {
-  text-decoration: none; /* Remove underlines from links */
-  color: inherit; /* Inherit color from parent, so links don't look different initially */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Remove visited link styling */
 #top5-nekretnine-lokacija a:visited {
-  color: inherit; /* Keep the same color even after visited */
+  color: inherit;
 }
 
-/* Style for the Lokacija link */
 #nekretnina-lokacija-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Inherit color from parent, initially same as other text */
+    text-decoration: none;
+    color: inherit;
 }
 
 #nekretnina-lokacija-link:visited {
@@ -188,9 +187,80 @@ iframe {
 
 #nekretnina-slika {
   width: 95%;
-  height: auto; 
-} 
+  height: auto;
+}
 
 #top5-nekretnine-lokacija {
-  display: none; 
+  display: none;
+}
+
+#dodaj-interesovanje-forma {
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    width: 90%;
+    text-align: left;
+}
+
+#dodaj-interesovanje-forma h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#interesovanje-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#interesovanje-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#interesovanje-form input[type="text"],
+#interesovanje-form input[type="number"],
+#interesovanje-form input[type="date"],
+#interesovanje-form textarea,
+#interesovanje-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#interesovanje-form textarea {
+    min-height: 100px;
+}
+
+
+#interesovanje-form button[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#interesovanje-form button[type="submit"]:hover {
+    background-color: #333;
+}
+
+#interesovanje-poruka.poruka {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    color: #0097a7;
+}
+
+.type-fields {
+    padding-left: 10px;
+    margin-top: 10;
 }

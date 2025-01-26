@@ -15,7 +15,7 @@
     <iframe src="meni.html"></iframe>
 
     <div id="osnovno">
-        <img src="../Resources/stan/stan1.jpg" alt="Nekretnina" id="nekretnina-slika">
+        <img src="" alt="Nekretnina" id="nekretnina-slika">
         <p><strong>Naziv:</strong> <span id="nekretnina-naziv"></span></p>
         <p><strong>Kvadratura:</strong> <span id="nekretnina-kvadratura"></span> m²</p>
         <p><strong>Cijena:</strong> <span id="nekretnina-cijena"></span> BAM</p>
@@ -32,7 +32,7 @@
             <p><strong>Datum objave oglasa:</strong> <span id="nekretnina-datum-objave"></span></p>
         </div>
         <div id="opis">
-            <p><strong>Opis:</strong> <span id="nekretnina-opis"></span></p>
+            <p><strong  >Opis:</strong> <span id="nekretnina-opis"></span></p>
         </div>
     </div>
 
@@ -50,12 +50,80 @@
         </div>
     </div>
 
+    <h3>PONUDE</h3>
+    <div id="ponude">
+        <div id="carousel-ponude-container">
+            <div class="carousel-ponuda-slot" id="carousel-ponuda-slot-1"></div>
+            <div class="carousel-ponuda-slot" id="carousel-ponuda-slot-2"></div>
+            <div class="carousel-ponuda-slot" id="carousel-ponuda-slot-3"></div>
+        </div>
+
+        <div class="carousel-controls">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </div>
+
+    <h3>ZAHTJEVI</h3>
+    <div id="zahtjevi">
+        <div id="carousel-zahtjevi-container">
+            <div class="carousel-zahtjev-slot" id="carousel-zahtjev-slot-1"></div>
+            <div class="carousel-zahtjev-slot" id="carousel-zahtjev-slot-2"></div>
+            <div class="carousel-zahtjev-slot" id="carousel-zahtjev-slot-3"></div>
+        </div>
+
+        <div class="carousel-controls">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </div>
 
     <div id="top5-nekretnine-lokacija">
         <h3>TOP 5 NEKRETNINA NA LOKACIJI</h3>
         <!-- Top 5 nekretnina će se prikazivati ovdje -->
     </div>
-
+    <div id="dodaj-interesovanje-forma">
+        <h3>Dodaj Interesovanje</h3>
+        <form id="interesovanje-form">
+            <div class="form-group">
+                <label for="tip-interesovanja">Tip Interesovanja:</label>
+                <select id="tip-interesovanja" name="tipInteresovanja">
+                    <option value="upit">Upit</option>
+                    <option value="zahtjev">Zahtjev za Pregled</option>
+                    <option value="ponuda">Ponuda</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="interesovanje-tekst">Tekst Interesovanja:</label>
+                <textarea id="interesovanje-tekst" name="tekst" required></textarea>
+            </div>
+    
+            <div id="zahtjev-fields" class="type-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="trazeni-datum">Traženi Datum Pregleda:</label>
+                    <input type="date" id="trazeni-datum" name="trazeniDatum">
+                </div>
+            </div>
+    
+            <div id="ponuda-fields" class="type-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="ponuda-cijena">Cijena Ponude:</label>
+                    <input type="number" id="ponuda-cijena" name="ponudaCijene" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="vezana-ponuda-id">Vezana Ponuda (opcionalno):</label>
+                    <select id="vezana-ponuda-id" name="idVezanePonude">
+                        <option value="">-- Bez vezane ponude --</option>
+                        <!-- Options will be dynamically added by JavaScript -->
+                    </select>
+                </div>
+            </div>
+    
+            <button type="submit">Dodaj Interesovanje</button>
+            <div id="interesovanje-poruka" class="poruka"></div>
+        </form>
+    </div>
 </body>
 
 </html>

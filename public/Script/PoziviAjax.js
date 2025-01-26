@@ -166,6 +166,34 @@ const PoziviAjax = (() => {
         ajaxRequest('GET', `/next/upiti/nekretnina/${nekretnina_id}?page=${page}`, null, callbackWrapper); 
     }
 
+    function impl_getInteresovanjaNekretnine(nekretnina_id, fnCallback) {
+        function callbackWrapper(err, response) {
+            if (err) {
+                fnCallback(err, null);
+                return;
+            }
+
+            try {
+                const parsedData = JSON.parse(response);
+                fnCallback(null, parsedData);
+            } catch (parseError) {
+                console.error("Greška pri parsiranju JSON-a u impl_getInteresovanjaNekretnine:", parseError);
+                console.error("Originalni odgovor (neparsiran):", response);
+                fnCallback(parseError, null);
+            }
+        }
+        ajaxRequest('GET', `/nekretnina/${nekretnina_id}/interesovanja`, null, callbackWrapper);
+    }
+
+    function impl_postZahtjev(nekretnina_id, body, fnCallback) {
+        ajaxRequest('POST', `/nekretnina/${nekretnina_id}/zahtjev`, body, fnCallback);
+    }
+
+    function impl_postPonuda(nekretnina_id, ponudaData, fnCallback) { 
+        ajaxRequest('POST', `/nekretnina/${nekretnina_id}/ponuda`, ponudaData, fnCallback);
+    }
+
+
     return {
         postLogin: impl_postLogin,
         postLogout: impl_postLogout,
@@ -176,7 +204,10 @@ const PoziviAjax = (() => {
         getTop5Nekretnina: impl_getTop5Nekretnina,
         getMojiUpiti: impl_getMojiUpiti,
         getNekretnina: impl_getNekretnina,
-        getNextUpiti: impl_getNextUpiti
+        getNextUpiti: impl_getNextUpiti,
+        getInteresovanjaNekretnine: impl_getInteresovanjaNekretnine,
+        postZahtjev: impl_postZahtjev, 
+        postPonuda: impl_postPonuda 
     };
 })();
 
